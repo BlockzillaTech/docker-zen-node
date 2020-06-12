@@ -71,7 +71,7 @@ fi
 # Fix ownership of the created files/folders
 chown -R user:user /home/user /mnt/zen
 
-/usr/local/bin/gosu user zen-fetch-params
+gosu user zen-fetch-params
 
 echo "Starting $@ .."
 if [[ "$1" == zend ]]; then

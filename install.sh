@@ -186,7 +186,7 @@ Restart=always
 ExecStartPre=-/usr/bin/docker stop zen-node
 ExecStartPre=-/usr/bin/docker rm  zen-node
 # Always pull the latest docker image
-ExecStartPre=/usr/bin/docker pull blockzilla/zend:latest
+#ExecStartPre=/usr/bin/docker pull blockzilla/zend:latest
 ExecStart=/usr/bin/docker run --rm --net=host -p 9033:9033 -p 18231:18231 -v /mnt/zen:/mnt/zen -v /etc/letsencrypt/:/etc/letsencrypt/ --name zen-node blockzilla/zend:latest
 [Install]
 WantedBy=multi-user.target
@@ -205,7 +205,7 @@ Restart=always
 ExecStartPre=-/usr/bin/docker stop zen-secnodetracker
 ExecStartPre=-/usr/bin/docker rm  zen-secnodetracker
 # Always pull the latest docker image
-ExecStartPre=/usr/bin/docker pull blockzilla/secnodetracker:latest
+#ExecStartPre=/usr/bin/docker pull blockzilla/secnodetracker:latest
 #ExecStart=/usr/bin/docker run --init --rm --net=host -v /mnt/zen:/mnt/zen --name zen-secnodetracker blockzilla/secnodetracker:latest
 ExecStart=/usr/bin/docker run --rm --net=host -v /mnt/zen:/mnt/zen --name zen-secnodetracker blockzilla/secnodetracker:latest
 [Install]
